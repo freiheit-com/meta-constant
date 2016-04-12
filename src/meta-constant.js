@@ -20,18 +20,13 @@ class MetaConstant {
  */
 function intern(key:string): MetaConstant {
     const constPresent = metaConstants[key];
-    if (constPresent) {
+    if (constPresent !== undefined) {
         return constPresent;
     }
     const newConst = new MetaConstant(key);
     metaConstants[key] = newConst;
     return newConst;
 }
-
-/**
- * A shortcut for _$_``.
- */
-export const _0_ = intern('');
 
 /**
  * "produces" a meta constant.
@@ -52,3 +47,8 @@ export function _$_(strings: [string]): any {
 
     return intern(key);
 }
+
+/**
+ * A shortcut for _$_``.
+ */
+export const _0_ = _$_``;

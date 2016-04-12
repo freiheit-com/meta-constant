@@ -51,8 +51,16 @@ describe('meta constants', () => {
         });
 
         it('should be identical ot the empty _$_', () => {
-            console.log(_0_.toString());
             expect(_0_).toBe(_$_` `);
         });
+
+        it('should pass through function expecting string', () => {
+            expect(gndn(_0_)).toBe(_0_);
+        });
+
+        // goes nowhere, does nothing
+        function gndn(str: string) {
+            return str;
+        }
     });
 });

@@ -3,7 +3,12 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+
+var _templateObject = _taggedTemplateLiteral([''], ['']);
+
 exports._$_ = _$_;
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -24,18 +29,13 @@ var MetaConstant = function MetaConstant(key) {
 
 function intern(key) {
     var constPresent = metaConstants[key];
-    if (constPresent) {
+    if (constPresent !== undefined) {
         return constPresent;
     }
     var newConst = new MetaConstant(key);
     metaConstants[key] = newConst;
     return newConst;
 }
-
-/**
- * A shortcut for _$_``.
- */
-var _0_ = exports._0_ = intern('');
 
 /**
  * "produces" a meta constant.
@@ -58,3 +58,8 @@ function _$_(strings) {
 
     return intern(key);
 }
+
+/**
+ * A shortcut for _$_``.
+ */
+var _0_ = exports._0_ = _$_(_templateObject);
