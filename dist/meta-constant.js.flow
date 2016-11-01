@@ -38,7 +38,7 @@ function intern(key:string): MetaConstant {
  * Although the tagged string template features are not used yet, it
  * is used for syntactic "stick out" and future extensions.
  */
-export function _$_(strings: [string]): any {
+export function _$_(strings: Array<string>): any {
     const key = strings.reduce((str1, str2) => str1 + str2, '');
 
     if (key.trim() === '') {
