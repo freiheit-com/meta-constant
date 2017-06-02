@@ -1,3 +1,5 @@
+[![npm](https://img.shields.io/badge/npm-0.3.2-blue.svg)](https://www.npmjs.com/package/meta-constant/)
+
 # meta-constants
 
 brings clojure/midjes meta-constants (https://github.com/marick/Midje/wiki/Metaconstants) to
