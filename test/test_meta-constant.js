@@ -2,7 +2,7 @@
  * @flow
  */
 import expect from 'expect';
-import {_$_, _0_} from './meta-constant';
+import {_$_, _0_} from '../src/meta-constant';
 
 describe('meta constants', () => {
     describe('_$_', () => {
@@ -16,15 +16,15 @@ describe('meta constants', () => {
         it('should be unequal if different name used', () => {
             const meta1 = _$_`diffTest`;
             const meta2 = _$_`anotherName`;
-            expect(meta1).toNotBe(meta2);
-            expect(meta1).toNotEqual(meta2);
+            expect(meta1).not.toBe(meta2);
+            expect(meta1).not.toEqual(meta2);
         });
 
         it('should unequal to all primitive types', () => {
             const meta = _$_`test`;
-            expect(meta).toNotBe(42);
-            expect(meta).toNotBe('test');
-            expect(meta).toNotBe(function test() {
+            expect(meta).not.toBe(42);
+            expect(meta).not.toBe('test');
+            expect(meta).not.toBe(function test() {
             });
         });
 
@@ -47,7 +47,7 @@ describe('meta constants', () => {
         });
 
         it('should not be identical to other constant', () => {
-            expect(_0_).toNotBe(_$_`other`);
+            expect(_0_).not.toBe(_$_`other`);
         });
 
         it('should be identical ot the empty _$_', () => {
