@@ -40,7 +40,7 @@
     "mocha": "6.2.0",
     "run-sequence": "2.2.1",
     "watchify": "3.11.1",
-    "webpack": "4.37.0"
+    "webpack": "5.94.0"
   },
   "scripts": {
     "test": "mocha --require babel-core/register"
